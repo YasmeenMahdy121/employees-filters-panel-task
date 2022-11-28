@@ -1,0 +1,28 @@
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 justify-content-center align-items-start"><span>Employees</span>
+  </div>
+  <div class="page__content shadow p-3 position-relative">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Employment Date</th>
+          <th scope="col">Salary</th>
+          <th scope="col">Experience</th>
+          <th scope="col">Department</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees | employeesFiltration:filterRoles; let i=index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{employee?.Name}}</td>
+          <td>{{employee?.Employment_Date | date:'dd/MM/yyyy'}}</td>
+          <td>{{employee?.Salary}}</td>
+          <td>{{employee?.Experience}}</td>
+          <td>{{employee?.Department}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
