@@ -7,7 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'develop-network-task';
-  constructor(){}
+  constructor(){
+    if(window.innerWidth <= 912){
+      this.sideBarOpen = false;
+    }
+  }
 
   sideBarOpen = true;
 

@@ -26,6 +26,7 @@
   }
   input{
     border-radius: 0;
+    border: none;
     &:focus{
       box-shadow: none;
       border: none;
@@ -40,7 +41,7 @@
     color: #212529;
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: none;
     cursor: pointer;
     &:focus {
       border: none;

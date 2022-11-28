@@ -8,11 +8,9 @@ export class EmployeesFiltrationPipe implements PipeTransform {
 
   transform(employees: any[], filterRoles: any): IEmployee[] {
     if(!Object.keys(filterRoles).length){
-      console.log('if')
       return employees;
     }
     else{
-      console.log('else')
       let filteredEmployees = employees.filter(employee=>{
         for (const key in filterRoles) {
           if ((key == 'Name' && !(employee[key]?.toLocaleLowerCase().includes(filterRoles[key].toLocaleLowerCase()))) ||

@@ -18,7 +18,7 @@ export class FiltrationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.checkScreenWidth()
+    this.showCloseBtn = this.checkScreenWidth()
     this.employeesService.getExperiences().subscribe((experiences)=> this.Experiences = experiences )
     this.employeesService.getDepartments().subscribe((departments)=> this.Departments = departments )
   }
@@ -42,6 +42,7 @@ export class FiltrationComponent implements OnInit {
       }
     }
     this.employeesService.setFilterRoles(roles)
+    this.checkScreenWidth()?this.closeFiltration():''
   }
   clearFilter(){
     this.filterForm.reset()
@@ -50,8 +51,9 @@ export class FiltrationComponent implements OnInit {
 
   checkScreenWidth(){
     if(window.innerWidth <= 912){
-      this.showCloseBtn = true
+      return true
     }
+    return false
   }
 
 }
